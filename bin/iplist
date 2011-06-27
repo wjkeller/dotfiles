@@ -1,9 +1,7 @@
 #!/bin/sh
-
 if [ "$1" = "web" ]
 then
   curl icanhazip.com
 else
   ifconfig $1 | awk '/inet.[0-9]/ {print $2}'
 fi
-
