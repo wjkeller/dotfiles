@@ -12,6 +12,11 @@ if [ -d /sw ]; then
         export PATH=/sw/bin:$PATH
 fi
 
+# homebrew
+if [ -d /usr/local/bin ]; then 
+  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+fi
+
 # zend
 if [ -d /usr/local/zend/bin ]; then 
         export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/zend/lib
@@ -20,11 +25,6 @@ if [ -d /usr/local/zend/bin ]; then
         export NLS_LANG="AMERICAN_AMERICA.UTF8"
               
         export PATH=/usr/local/zend/bin:/usr/local/zend/mysql/bin:$PATH
-fi
-
-# homebrew
-if [ -d /usr/local/bin ]; then 
-  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 fi
 
 # add users bin folder to the path, if you have it
