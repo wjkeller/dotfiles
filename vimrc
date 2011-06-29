@@ -170,8 +170,9 @@ endif
 " highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " Numbers
-set number
+set nonumber
 set numberwidth=5
+highlight LineNr term=bold cterm=bold ctermfg=Black ctermbg=White gui=NONE guibg=NONE
 
 " Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
@@ -204,4 +205,7 @@ function! OpenURL()
   endif
 endfunction
 map <Leader>w :call OpenURL()<CR>
+
+" toggle line numbers with ,n
+map ,n :set number!<return>
 
