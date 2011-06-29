@@ -27,3 +27,6 @@ export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 # misc
 export HISTCONTROL=ignoredups
 
+# command line behave like vim
+set -o vi
+
