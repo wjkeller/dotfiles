@@ -28,8 +28,8 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   set hlsearch
 endif
 
-" Switch wrap off for everything
-set nowrap
+" Switch wrap on for everything
+set wrap
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
