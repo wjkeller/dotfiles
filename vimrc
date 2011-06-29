@@ -4,6 +4,11 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" pathogen bundles
+filetype off
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -28,8 +33,8 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   set hlsearch
 endif
 
-" Switch wrap off for everything
-set nowrap
+" Switch wrap on for everything
+set wrap
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -170,8 +175,9 @@ endif
 " highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " Numbers
-set number
+set nonumber
 set numberwidth=5
+highlight LineNr term=bold cterm=bold ctermfg=Black ctermbg=White gui=NONE guibg=NONE
 
 " Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
@@ -204,4 +210,7 @@ function! OpenURL()
   endif
 endfunction
 map <Leader>w :call OpenURL()<CR>
+
+" toggle line numbers with ,n
+map ,n :set number!<return>
 

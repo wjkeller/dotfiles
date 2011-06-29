@@ -1,0 +1,8 @@
+[.]
+scm = git
+
+[vim/bundle/vim-coffee-script]
+path = vim/bundle/vim-coffee-script
+repository = https://github.com/kchmck/vim-coffee-script.git
+scm = git
+
