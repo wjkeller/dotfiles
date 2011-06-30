@@ -25,8 +25,8 @@ function asucd () {
   $var;
 }
 
-# color human-readable ls
-#alias ls='ls -Gh'
+# ls
+alias ls='ls -hF'
 
 # misc
 alias reload='. ~/.bash_profile'

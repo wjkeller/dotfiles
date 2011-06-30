@@ -26,7 +26,24 @@ export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 
 # ls color options
 export CLICOLOR=1
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+# a  black
+# b  red
+# c  green
+# d  brown
+# e  blue
+# f  magenta
+# c  cyan
+# h  light grey
+# A  block black, usually shows up as dark grey
+# B  bold red
+# C  bold green
+# D  bold brown, usually shows up as yellow
+# E  bold blue
+# F  bold magenta
+# G  bold cyan
+# H  bold light grey; looks like bright white
+# x  default foreground or background
+export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # misc
 export HISTCONTROL=ignoredups
