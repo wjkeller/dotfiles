@@ -24,6 +24,10 @@ export PS1="\[$COLOR_GREEN\][\u@\h \W]\$ \[${COLOR_NC}\]"
 # grep color options
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 
+# ls color options
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
 # misc
 export HISTCONTROL=ignoredups
 
