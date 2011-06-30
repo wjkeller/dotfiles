@@ -5,7 +5,9 @@ These are config files to set up a system the way I like it.
 
 == Installation
 
-  git clone git://github.com/nynjawitay/dotfiles ~/.dotfiles
+I like git, but am not impressed with submodules.  Theres a great ruby gem called ext that is explained at http://nopugs.com/ext-tutorial
+
+  ext checkout git://github.com/<your username>/dotfiles ~/.dotfiles
   cd ~/.dotfiles
   rake install
 
@@ -15,7 +17,7 @@ These are config files to set up a system the way I like it.
 I am running on Mac OS X, but it will likely work on Linux as well with 
 minor fiddling. 
 
-Unlike Ryan, I stick to bash
+Unlike Ryan, I stick to bash, so I got rid of the zsh stuff.
 
 
 == Features
