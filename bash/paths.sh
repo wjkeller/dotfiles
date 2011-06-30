@@ -27,6 +27,11 @@ if [ -d /usr/local/zend/bin ]; then
         export PATH=/usr/local/zend/bin:/usr/local/zend/mysql/bin:$PATH
 fi
 
+# brew
+if [ -f ${HOME}/.rvm/scripts/rvm ]; then
+  source ${HOME}/.rvm/scripts/rvm
+fi
+
 # add users bin folder to the path, if you have it
 if [ -d ${HOME}/.bin ]; then 
         export PATH=${HOME}/.bin:$PATH
