@@ -214,3 +214,9 @@ map <Leader>w :call OpenURL()<CR>
 " toggle line numbers with ,n
 map <Leader>n :set number!<CR>
 
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
