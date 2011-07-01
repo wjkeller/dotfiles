@@ -51,3 +51,11 @@ export HISTCONTROL=ignoredups
 # command line behave like vim
 set -o vi
 
+# macvim or vim as EDITOR
+if command -v mvim &>/dev/null; then
+  EDITOR=mvim
+else
+  EDITOR=vim
+fi
+export EDITOR
+
