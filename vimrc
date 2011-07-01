@@ -212,5 +212,5 @@ endfunction
 map <Leader>w :call OpenURL()<CR>
 
 " toggle line numbers with ,n
-map ,n :set number!<return>
+map <Leader>n :set number!<CR>
 
