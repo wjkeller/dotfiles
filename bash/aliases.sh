@@ -29,5 +29,6 @@ function asucd () {
 alias ls='ls -hF'
 
 # misc
+# careful with this since it does not properly reset the PATH
 alias reload='. ~/.bash_profile'
 
