@@ -52,7 +52,7 @@ export HISTCONTROL=ignoredups
 set -o vi
 
 # macvim or vim as EDITOR
-if command -v mvim &>/dev/null; then
+if command_exists mvim; then
   EDITOR=mvim
 else
   EDITOR=vim
