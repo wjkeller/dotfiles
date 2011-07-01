@@ -1,4 +1,7 @@
 " based on http://github.com/jferris/config_files/blob/master/vimrc
+set encoding=utf-8
+set fileencoding=utf-8
+scriptencoding utf-8
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
