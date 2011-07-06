@@ -223,7 +223,11 @@ map <Leader>n :set number!<CR>
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 
-"
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
+
+" better statusline
+set statusline=%<%F%m%r%h%w\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+" add fugitive if it is enabled
+set statusline+=%{exists('g:loaded_fugitive')?\ fugitive#statusline():''}
 
