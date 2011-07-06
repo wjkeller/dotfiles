@@ -8,6 +8,9 @@ scriptencoding utf-8
 set nocompatible
 
 " pathogen bundles
+" on and then off because of strange exit code
+" http://tooky.github.com/2010/04/08/there-was-a-problem-with-the-editor-vi-git-on-mac-os-x.html
+filetype on
 filetype off
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
@@ -220,6 +223,7 @@ map <Leader>n :set number!<CR>
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 
+"
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
