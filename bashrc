@@ -10,6 +10,7 @@ for i in ~/.bash/*.sh ; do
 done
 
 # use .localrc for settings specific to one system
-if [ -f ~/.localrc ]; then
-  source ~/.localrc
+if [ -f ~/.bashrc.local ]; then
+  source ~/.bashrc.local
 fi
+
