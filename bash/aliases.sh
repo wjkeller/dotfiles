@@ -23,7 +23,7 @@ function asucd () {
 }
 
 # ls
-alias ls='ls -hF'
+alias ls='ls -hF --color=auto'
 
 # misc
 # careful with this since it does not properly reset the PATH
