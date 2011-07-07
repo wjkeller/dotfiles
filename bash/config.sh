@@ -53,7 +53,7 @@ set -o vi
 
 # macvim or vim as EDITOR
 if command_exists mvim; then
-  EDITOR=mvim
+  EDITOR='mvim --remote-wait'
 else
   EDITOR=vim
 fi
