@@ -51,11 +51,6 @@ export HISTCONTROL=ignoredups
 # command line behave like vim
 set -o vi
 
-# macvim or vim as EDITOR
-if command_exists mvim; then
-  EDITOR='mvim --remote-wait'
-else
-  EDITOR=vim
-fi
-export EDITOR
+# vim as EDITOR
+export EDITOR=vim
 
