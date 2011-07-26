@@ -1,0 +1,13 @@
+#!/bin/sh
+# git-fork-quickstart <project-name> <project-url>
+
+# creates a copy of the quickstart in a new repo
+# need to do gitosis setup of the repo first
+
+if [ $# -ne 2 ]; then
+    echo 1>&2 Usage: $0 project_name project_url
+    exit 127
+fi
+
+git-fork quickstart git@asucd-dev.ucdavis.edu:ZendCM-Quickstart.git $1 $2
+
