@@ -22,7 +22,7 @@ FORK_URL=$4
 git clone -o ${ORIGINAL} ${ORIGINAL_URL} ${FORK}
 cd ${FORK}
 
-# Set up a standard track between initial master and local ip_master
+# Set up a standard track between initial master and local initial project master
 git config branch.${ORIGINAL_BRANCH}.remote ${ORIGINAL}
 git config branch.${ORIGINAL_BRANCH}.merge refs/heads/master
 
