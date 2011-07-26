@@ -1,10 +1,7 @@
 #!/bin/sh
 # git-fork <orig-name> <orig-url> <fork-name> <fork-url>
-
 # takes the initial project name and url and forks into the fork name and url
-
-# creates a copy of the quickstart in a new repo
-# need to do gitosis setup of the repo first
+# need to do setup of the fork's repo first
 
 if [ $# -ne 4 ]; then
          echo 1>&2 Usage: $0 orig-name orig-url fork-name fork-url
