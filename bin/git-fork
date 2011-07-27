@@ -2,6 +2,7 @@
 # git-fork <orig-name> <orig-url> <fork-name> <fork-url>
 # takes the initial project name and url and forks into the fork name and url
 # need to do setup of the fork's repo first
+# if the repo is already cloned, then just the orig remote is added
 
 if [ $# -ne 4 ]; then
          echo 1>&2 Usage: $0 orig-name orig-url fork-name fork-url
@@ -15,8 +16,12 @@ ORIGINAL_BRANCH="${ORIGINAL}_master"
 FORK=$3
 FORK_URL=$4
 
-# Create new local clone for the new project
-git clone -o ${ORIGINAL} ${ORIGINAL_URL} ${FORK}
+# Create new local clone for the new project if it does not already exist
+if [ ! -d "${FORK}" ]; then
+  git clone -o ${ORIGINAL} ${ORIGINAL_URL} ${FORK}
+fi
+
+# change directory to our fork
 cd ${FORK}
 
 # Set up a standard track between initial master and local initial project master
