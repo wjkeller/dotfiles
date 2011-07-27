@@ -16,10 +16,8 @@ ORIGINAL_BRANCH="${ORIGINAL}_master"
 FORK=$3
 FORK_URL=$4
 
-# Create new local clone for the new project if it does not already exist
-if [ ! -d "${FORK}" ]; then
-  git clone -o ${ORIGINAL} ${ORIGINAL_URL} ${FORK}
-fi
+# Create new local clone for the new project
+git clone -o ${ORIGINAL} ${ORIGINAL_URL} ${FORK}
 
 # change directory to our fork
 cd ${FORK}
