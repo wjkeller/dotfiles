@@ -1,0 +1,8 @@
+#!/bin/bash
+# git-add-remote-quickstart
+
+REMOTE="quickstart"
+REMOTE_URL="git@asucd-dev.ucdavis.edu:ZendCM-Quickstart.git"
+
+git-add-remote $REMOTE $REMOTE_URL
+

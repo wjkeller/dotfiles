@@ -1,0 +1,22 @@
+#!/bin/bash
+# git-add-remote <remote-name> <remote-url>
+# not sure if this is best practice, but it seems to work
+
+if [ $# -ne 2 ]; then
+    echo 1>&2 Usage: $0 remote-name remote-url
+    exit 127
+fi
+
+REMOTE=$1
+REMOTE_URL=$2
+
+BRANCH="${REMOTE}_master"
+
+git config remote.${REMOTE}.push refs/heads/${REMOTE}:master
+git config remote.${REMOTE}.fetch +refs/heads/master:refs/remotes/${REMOTE}/master
+git config remote.${REMOTE}.url ${REMOTE_URL}
+git config branch.${BRANCH}.remote ${REMOTE}
+git config branch.${BRANCH}.merge refs/heads/master
+git fetch ${REMOTE}
+git branch -a
+
