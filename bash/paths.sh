@@ -12,8 +12,8 @@ if [ -d /sw ]; then
 fi
 
 # homebrew
-if [ -d ${HOME}/.brew/bin ]; then
-  export PATH=${HOME}/.brew/bin:${PATH}
+if [ -d ${HOME}/.homebrew/bin ]; then
+  export PATH=${HOME}/.homebrew/bin:${PATH}
 fi
 if [ -d /usr/local/bin ]; then   
   export PATH=/usr/local/bin:${PATH}
