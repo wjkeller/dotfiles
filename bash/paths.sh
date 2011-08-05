@@ -2,7 +2,6 @@
 if [ -d /opt/local/sbin ]; then 
         export PATH=/opt/local/sbin:$PATH
 fi
-
 if [ -d /opt/local/bin ]; then 
         export PATH=/opt/local/bin:$PATH
 fi
@@ -13,8 +12,14 @@ if [ -d /sw ]; then
 fi
 
 # homebrew
-if [ -d /usr/local/bin ]; then 
-  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+if [ -d ${HOME}/.homebrew/bin ]; then
+  export PATH=${HOME}/.homebrew/bin:${PATH}
+fi
+if [ -d /usr/local/bin ]; then   
+  export PATH=/usr/local/bin:${PATH}
+fi
+if [ -d /usr/local/sbin ]; then
+  export PATH=/usr/local/sbin:${PATH}
 fi
 
 # zend
@@ -27,7 +32,7 @@ if [ -d /usr/local/zend/bin ]; then
         export PATH=/usr/local/zend/bin:/usr/local/zend/mysql/bin:$PATH
 fi
 
-# brew
+# rvm
 if [ -f ${HOME}/.rvm/scripts/rvm ]; then
   source ${HOME}/.rvm/scripts/rvm
 fi

@@ -9,5 +9,5 @@ if [ $# -ne 2 ]; then
     exit 127
 fi
 
-git-fork quickstart git@asucd-dev.ucdavis.edu:ZendCM-Quickstart.git $1 $2
+git-create-fork quickstart git@asucd-dev.ucdavis.edu:ZendCM-Quickstart.git $1 $2
 
