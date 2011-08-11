@@ -59,9 +59,12 @@ export PIP_DOWNLOAD_CACHE=~/.pip/cache
 
 # python virtualenvwrapper
 VIRTUALENV_WRAPPER=`which virtualenvwrapper.sh`
-if [ -e ${VIRTUALENV_WRAPPER} ]; then
+if [ "${VIRTUALENV_WRAPPER}" != "" ]; then
+  if [ -e ${VIRTUALENV_WRAPPER} ]; then
     export WORKON_HOME=~/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
+    source ${VIRTUALENV_WRAPPER}
     export PIP_VIRTUALENV_BASE=$WORKON_HOME
     export PIP_RESPECT_VIRTUALENV=true
+  fi
 fi
+
