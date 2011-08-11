@@ -23,8 +23,8 @@ if [ -d /usr/local/sbin ]; then
 fi
 
 # ccache
-if [ -d /usr/local/Cellar/ccache/3.1.4/libexec ]; then
-    export PATH=/usr/local/Cellar/ccache/3.1.4/libexec:${PATH}
+if [ -d /usr/local/Cellar/ccache/3.1.5/libexec ]; then
+    export PATH=/usr/local/Cellar/ccache/3.1.5/libexec:${PATH}
 fi
 
 # zend
