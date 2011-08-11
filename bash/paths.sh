@@ -22,27 +22,31 @@ if [ -d /usr/local/sbin ]; then
   export PATH=/usr/local/sbin:${PATH}
 fi
 
+# ccache
+if [ -d /usr/local/Cellar/ccache/3.1.4/libexec ]; then
+    export PATH=/usr/local/Cellar/ccache/3.1.4/libexec:${PATH}
+fi
+
 # zend
 if [ -d /usr/local/zend/bin ]; then 
-        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/zend/lib
-        export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/zend/oracle/instantclient_10_2
-        export TNS_ADMIN=/usr/local/zend/oracle/network/admin
-        export NLS_LANG="AMERICAN_AMERICA.UTF8"
-              
-        export PATH=/usr/local/zend/bin:/usr/local/zend/mysql/bin:$PATH
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/zend/lib
+    export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/zend/oracle/instantclient_10_2
+    export TNS_ADMIN=/usr/local/zend/oracle/network/admin
+    export NLS_LANG="AMERICAN_AMERICA.UTF8"
+    export PATH=/usr/local/zend/bin:/usr/local/zend/mysql/bin:$PATH
 fi
 
 # rvm
 if [ -f ${HOME}/.rvm/scripts/rvm ]; then
-  source ${HOME}/.rvm/scripts/rvm
+    source ${HOME}/.rvm/scripts/rvm
 fi
 
 # add users bin folder to the path, if you have it
 if [ -d ${HOME}/.bin ]; then 
-        export PATH=${HOME}/.bin:$PATH
+    export PATH=${HOME}/.bin:$PATH
 fi
 if [ -d ${HOME}/bin ]; then 
-        export PATH=${HOME}/bin:$PATH
+    export PATH=${HOME}/bin:$PATH
 fi
 
 #export PATH="~/bin:~/.bin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
