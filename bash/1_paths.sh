@@ -49,5 +49,9 @@ if [ -d ${HOME}/bin ]; then
     export PATH=${HOME}/bin:$PATH
 fi
 
+if [ -e ${HOME}/.path.local ]; then
+  source ${HOME}/.path.local
+fi
+
 #export PATH="~/bin:~/.bin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
 #export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
