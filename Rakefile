@@ -30,6 +30,13 @@ task :install do
       link_file(file)
     end
   end
+
+  # create pip cache folder if it doesn't exist
+  pip_cache = File.join(ENV['HOME'], '.pip', 'cache')
+  if not File.exist?(pip_cache)
+    puts "creating pip cache dir at #{pip_cache}"
+    Dir.mkdir(pip_cache)
+  end
 end
 
 def replace_file(file)

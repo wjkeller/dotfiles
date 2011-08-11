@@ -54,3 +54,6 @@ set -o vi
 # vim as EDITOR
 export EDITOR=vim
 
+# set pip cache folder
+export PIP_DOWNLOAD_CACHE=~/.pip/cache
+
