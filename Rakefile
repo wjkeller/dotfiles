@@ -30,6 +30,21 @@ task :install do
       link_file(file)
     end
   end
+
+  # create directories
+  # create pip cache folder if it doesn't exist
+  pip_cache = File.join(ENV['HOME'], '.pip', 'cache')
+  mkdir_ifnone(pip_cache)
+
+  virtualenv = File.join(ENV['HOME'], '.virtualenvs')
+  mkdir_ifnone(virtualenv)
+end
+
+def mkdir_ifnone(file)
+  if not File.exist?(file)
+    puts "creating dir at #{file}"
+    Dir.mkdir(file)
+  end
 end
 
 def replace_file(file)
