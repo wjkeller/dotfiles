@@ -11,31 +11,29 @@ fi
 
 ORIGINAL=$1
 ORIGINAL_URL=$2
-ORIGINAL_BRANCH="${ORIGINAL}_master"
+ORIGINAL_BRANCH=${ORIGINAL}_branch
 
 FORK=$3
 FORK_URL=$4
 
 # Create new local clone for the new project
-git clone -o ${ORIGINAL} ${ORIGINAL_URL} ${FORK}
+git clone ${ORIGINAL_URL} ${FORK}
 
 # change directory to our fork
 cd ${FORK}
 
-# Set up a standard track between initial master and local initial project master
-git config branch.${ORIGINAL_BRANCH}.remote ${ORIGINAL}
-git config branch.${ORIGINAL_BRANCH}.merge refs/heads/master
-
-# Automatically push the right branch
-git config remote.${ORIGINAL}.push refs/heads/${ORIGINAL_BRANCH}:master
-# Don't bring in the other shared branches from initial project
-git config remote.${ORIGINAL}.fetch +refs/heads/master:refs/remotes/${ORIGINAL}/master
-
-# Push new local repo it to new shared repo
+# remove the original origin
+git remote rm origin
+# Push new local repo it to new origin
 git remote add origin ${FORK_URL}
 git push origin master
 
 # Configure standard track of master with new local repo
+git config --remove-section branch.master
 git config branch.master.remote origin
 git config branch.master.merge refs/heads/master
+
+# update from original
+git remote add ${ORIGINAL} ${ORIGINAL_URL}
+git fetch ${ORIGINAL}
 
