@@ -22,12 +22,14 @@ if [ -d /usr/local/sbin ]; then
   export PATH=/usr/local/sbin:${PATH}
 fi
 
-# ccache
-if command_exists ccache; then
-    CCACHE_VERSION=`ccache -V | awk 'NR==1 {print $3}'`
-    CCACHE_LIBEXEC=`brew --cellar ccache`/${CCACHE_VERSION}/libexec
-    if [ -d ${CCACHE_LIBEXEC} ]; then
-        export PATH=${CCACHE_LIBEXEC}:${PATH}
+# ccache from brew
+if command_exists brew; then
+    if command_exists ccache; then
+        CCACHE_VERSION=`ccache -V | awk 'NR==1 {print $3}'`
+        CCACHE_LIBEXEC=`brew --cellar ccache`/${CCACHE_VERSION}/libexec
+        if [ -d ${CCACHE_LIBEXEC} ]; then
+            export PATH=${CCACHE_LIBEXEC}:${PATH}
+        fi
     fi
 fi
 
