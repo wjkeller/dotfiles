@@ -58,13 +58,10 @@ export EDITOR=vim
 export PIP_DOWNLOAD_CACHE=~/.pip/cache
 
 # python virtualenvwrapper
-VIRTUALENV_WRAPPER=`which virtualenvwrapper.sh`
-if [ "${VIRTUALENV_WRAPPER}" != "" ]; then
-  if [ -e ${VIRTUALENV_WRAPPER} ]; then
+if command_exists virtualenvwrapper.sh; then
     export WORKON_HOME=~/.virtualenvs
-    source ${VIRTUALENV_WRAPPER}
+    source `which virtualenvwrapper.sh`
     export PIP_VIRTUALENV_BASE=$WORKON_HOME
     export PIP_RESPECT_VIRTUALENV=true
-  fi
 fi
 
