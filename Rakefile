@@ -32,10 +32,15 @@ task :install do
   end
 
   # create directories
+  # crete pip folder if it doesn't exist
+  pip = File.join(ENV['HOME'], '.pip')
+  mkdir_ifnone(pip)
+
   # create pip cache folder if it doesn't exist
-  pip_cache = File.join(ENV['HOME'], '.pip', 'cache')
+  pip_cache = File.join(pip, 'cache')
   mkdir_ifnone(pip_cache)
 
+  # crete the virtualenvs folder if it doesn't exist
   virtualenv = File.join(ENV['HOME'], '.virtualenvs')
   mkdir_ifnone(virtualenv)
 end
