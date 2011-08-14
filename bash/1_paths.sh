@@ -23,8 +23,12 @@ if [ -d /usr/local/sbin ]; then
 fi
 
 # ccache
-if [ -d /usr/local/Cellar/ccache/3.1.5/libexec ]; then
-    export PATH=/usr/local/Cellar/ccache/3.1.5/libexec:${PATH}
+if command_exists ccache; then
+    CCACHE_VERSION=`ccache -V | awk 'NR==1 {print $3}'`
+    CCACHE_LIBEXEC=`brew --cellar ccache`/${CCACHE_VERSION}/libexec
+    if [ -d ${CCACHE_LIBEXEC} ]; then
+        export PATH=${CCACHE_LIBEXEC}:${PATH}
+    fi
 fi
 
 # zend

@@ -7,7 +7,7 @@ These are config files to set up a system the way I like it.
 
 I like git, but am not impressed with submodules.  Theres a great ruby gem called ext that is explained at http://nopugs.com/ext-tutorial
 
-  ext checkout git://github.com/<your username>/dotfiles ~/.dotfiles
+  ext checkout git://github.com/nynjawitay/dotfiles ~/.dotfiles
   cd ~/.dotfiles
   rake install
 
