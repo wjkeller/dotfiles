@@ -65,3 +65,7 @@ if command_exists virtualenvwrapper.sh; then
     export PIP_RESPECT_VIRTUALENV=true
 fi
 
+# bash 4 options
+#@todo need to make this only run on bash 4 instead of sending to /dev/null
+shopt -s autocd checkjobs globstar > /dev/null 2>&1
+
