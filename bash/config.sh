@@ -57,14 +57,6 @@ export EDITOR=vim
 # set pip cache folder
 export PIP_DOWNLOAD_CACHE=~/.pip/cache
 
-# python virtualenvwrapper
-if command_exists virtualenvwrapper.sh; then
-    export WORKON_HOME=~/.virtualenvs
-    source `which virtualenvwrapper.sh`
-    export PIP_VIRTUALENV_BASE=$WORKON_HOME
-    export PIP_RESPECT_VIRTUALENV=true
-fi
-
 # bash 4 options
 #@todo need to make this only run on bash 4 instead of sending to /dev/null
 shopt -s autocd checkjobs globstar > /dev/null 2>&1
