@@ -6,6 +6,7 @@
 
 if [ $# -ne 2 ]; then
     echo 1>&2 Usage: $0 project_name project_url
+    echo 1>&2 Note: Be sure to create a bare repo at the project_url first
     exit 127
 fi
 
