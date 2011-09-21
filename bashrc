@@ -14,3 +14,7 @@ if [ -f ~/.bashrc.local ]; then
   source ~/.bashrc.local
 fi
 
+if [ "$VIRTUAL_ENV" ]; then
+    source $VIRTUAL_ENV/bin/activate;
+fi
+
